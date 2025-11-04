@@ -1,0 +1,62 @@
+# .cursorrules — Step-up Version
+
+# Purpose: Ensure consistent, maintainable, and secure code across this project.
+
+rules:
+
+  ## General Practices
+  - Follow the project's existing style; be consistent.
+  - Use an auto-formatter (Prettier, Black, gofmt, etc. depending on language).
+  - Code must pass linting with no warnings.
+  - Favor readability over cleverness; clear, descriptive names > short ones.
+  - No secrets, API keys, or credentials in code, config, or logs.
+
+  ## Code & Architecture
+  - Reuse existing functions/modules; avoid duplication.
+  - Keep files small and focused; split if they grow too large.
+  - Document public functions, APIs, and non-obvious logic.
+  - Add comments explaining **why**, not just **what**.
+  - Handle errors explicitly; fail fast rather than silently swallowing them.
+
+  ## Testing
+  - Every behavior change must include/modify tests.
+  - Bugs require a failing test before the fix.
+  - Prefer fast unit tests for logic; add integration/E2E for critical flows.
+
+  ## Testing Requirements
+  - When implementing new features, suggest test cases
+  - When fixing bugs, recommend writing failing tests first
+  - Include testing guidance in responses
+
+  ## Git & PRs
+  - Branch naming: feat/*, fix/*, chore/*, docs/*, refactor/*.
+  - Commits should be small, clear, and follow Conventional Commit style:
+      - feat(auth): add password reset
+      - fix(db): correct query timeout
+  - PRs must be focused (≤ ~400 lines). Include rationale, risks, and screenshots/logs if relevant.
+
+  ## CI/CD & Quality Gates
+  - Required checks: build, lint, typecheck (if applicable), tests.
+  - Lock dependencies; no unpinned versions.
+  - Flaky tests are blockers—quarantine or fix promptly.
+  - Releases must be tagged and include a changelog entry.
+
+  ## TypeScript/JavaScript Specific
+  - Use strict TypeScript configuration
+  - Prefer interfaces over types for object shapes
+  - Use explicit return types for public functions
+  - Avoid `any` type; use proper typing
+
+  ## Phaser 3 Game Development
+  - Use scene lifecycle methods properly (preload, create, update)
+  - Extend Phaser classes when creating custom game objects
+  - Use Phaser's built-in physics systems
+  - Follow Phaser's naming conventions for game objects
+
+
+non_negotiables:
+  - Lint clean
+  - Tests for every behavior change
+  - No secrets committed
+  - Clear commit messages
+  - Small, focused PRs
