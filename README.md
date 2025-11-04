@@ -1,2 +1,2 @@
 # starter-story
-Experimenting various startup AI Projects.
+Experimentation repo for various startup AI Projects from different forums.
